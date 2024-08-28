@@ -15,7 +15,7 @@ The memcache library provides a generic, type-safe in-memory key-value store wit
 To use this library, simply import it into your Go project:
 
 ```go
-import "github.com/trinhdaiphuc/go-memcache"
+import "github.com/trinhdaiphuc/go-memcache/gomap"
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ import "github.com/trinhdaiphuc/go-memcache"
 You can create a new map instance by calling the NewMap function:
 
 ```go
-m := memcache.NewMap[int, string]()
+m := gomap.NewMap[int, string]()
 ```
 This creates a new map where keys are of type int and values are of type string.
 
@@ -135,7 +135,7 @@ import (
     "fmt"
     "time"
 	
-    "github.com/trinhdaiphuc/go-memcache"
+    "github.com/trinhdaiphuc/go-memcache/gomap"
 )
 
 type User struct {
@@ -145,7 +145,7 @@ type User struct {
 }
 
 func main() {
-    userMap := memcache.NewMap[int, User]()
+    userMap := gomap.NewMap[int, User]()
 
     userMap.Set(1, User{ID: 1, Username: "user1", Email: "user1@gmail.com"})
     userMap.ExpireKey(1, time.Second*10)

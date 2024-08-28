@@ -1,4 +1,4 @@
-package memcache
+package gomap
 
 import (
 	"fmt"
