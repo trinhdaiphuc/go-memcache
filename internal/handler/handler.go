@@ -7,10 +7,11 @@ import (
 )
 
 const (
-	PING    = "PING"
-	GET     = "GET"
-	SET     = "SET"
-	EXPIRED = "EXPIRE"
+	Ping   = "PING"
+	Echo   = "ECHO"
+	Get    = "GET"
+	Set    = "SET"
+	Expire = "EXPIRE"
 )
 
 type Func func([]resp.Expression) resp.Expression
@@ -35,9 +36,10 @@ func NewContext(m gomap.Map[string, string], h hashmap.HashMap[string, string]) 
 
 func NewMap() Map {
 	return Map{
-		PING:    NewPingHandler(),
-		GET:     NewGetHandler(),
-		SET:     NewSetHandler(),
-		EXPIRED: NewExpiredHandler(),
+		Ping:   NewPingHandler(),
+		Echo:   NewEchoHandler(),
+		Get:    NewGetHandler(),
+		Set:    NewSetHandler(),
+		Expire: NewExpiredHandler(),
 	}
 }
